@@ -1,0 +1,16 @@
+<?php
+function doto_ribbon_page_build(&$page){
+	global $base_url;
+
+	if(user_is_anonymous()){
+		$options = array('weight' => 0);
+		drupal_add_css(drupal_get_path('module', 'doto_ribbon') . '/css/ribbon.css', $options);
+
+		$path = $base_url.'/'.drupal_get_path('module', 'doto_ribbon').'/images/black_ribbon_top_left.png';
+		$page['header']['ribbon-html'] = array(
+	    	'#markup' => '<img src='.$path.' class="black-ribbon stick-top stick-left"/>'
+	  	);	
+	}	
+} 
+
+?>

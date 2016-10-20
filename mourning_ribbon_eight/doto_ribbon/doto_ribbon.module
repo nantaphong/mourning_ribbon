@@ -1,0 +1,19 @@
+<?php
+function doto_ribbon_preprocess_html(&$variables){
+	global $base_url;
+
+	if (\Drupal::currentUser()->isAnonymous()){
+		$path = $base_url.'/'.drupal_get_path('module', 'doto_ribbon').'/images/black_ribbon_top_left.png';
+	  	$variables['page_top']['ribbon-html'] = array(
+	  		'#markup' => '<img src='.$path.' class="black-ribbon stick-top stick-left"/>'
+	  	);	
+	}
+}
+
+function doto_ribbon_page_attachments(&$page){
+	if (\Drupal::currentUser()->isAnonymous()){
+		$page['#attached']['library'][] = 'doto_ribbon/doto-ribbon';	
+	}
+}
+
+?>	

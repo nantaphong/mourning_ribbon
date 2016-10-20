@@ -1,0 +1,6 @@
+name: Mourning Ribbon 
+description: 'Mourning ribbon for mourn period time. Develop by n.an1aphong@gmail.com'
+type: module
+core: 8.x
+package: User interface
+hidden: false
